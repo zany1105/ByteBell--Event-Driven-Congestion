@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ByteBell &mdash; Event-Driven Congestion Control</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-mark">BB</div>
+    <div class="brand-text">
+      <h1 data-i18n="title">ByteBell &middot; Event Congestion Control</h1>
+      <p id="brandSub" data-i18n="subtitle">Bengaluru corridor network &mdash; live status</p>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="lang-switch" id="langSwitch">
+      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+        <span id="langBtnLabel">English</span>
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="lang-menu" id="langMenu" role="listbox">
+        <div class="lang-option active" data-lang="en" role="option">
+          <span class="lang-native">English</span><span class="lang-sub">English</span>
+        </div>
+        <div class="lang-option" data-lang="hi" role="option">
+          <span class="lang-native">&#2361;&#2367;&#2306;&#2342;&#2368;</span><span class="lang-sub">Hindi</span>
+        </div>
+        <div class="lang-option" data-lang="kn" role="option">
+          <span class="lang-native">&#3221;&#3277;&#3240;&#3233;&#3253;</span><span class="lang-sub">Kannada</span>
+        </div>
+      </div>
+    </div>
+    <span><span class="clock-dot"></span><span id="feedLabel" data-i18n="feedLabel">Feed connected</span></span>
+    <span id="liveclock" style="font-variant-numeric: tabular-nums;"></span>
+  </div>
+</div>
+
+<div class="app">
+
+  <div class="mapzone">
+    <div class="map-toolbar" id="filterChips"></div>
+
+    <svg class="roadmap" id="roadmapSvg" viewBox="0 0 1000 760" preserveAspectRatio="xMidYMid meet"></svg>
+
+    <div class="legend">
+      <div class="legend-row"><span class="legend-dot" style="background:var(--redorange)"></span><span data-i18n="legendUnplanned">Unplanned &middot; active</span></div>
+      <div class="legend-row"><span class="legend-dot" style="background:var(--amber)"></span><span data-i18n="legendPlanned">Planned &middot; scheduled</span></div>
+      <div class="legend-row"><span class="legend-dot" style="background:var(--teal)"></span><span data-i18n="legendResolved">Resolved &middot; logged</span></div>
+    </div>
+
+    <div class="hint-banner" data-i18n="hintBanner">Click a marker to open the response plan for that location.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-scroll" id="panelScroll">
+      <!-- filled by JS -->
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
